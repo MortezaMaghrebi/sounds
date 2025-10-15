@@ -9,7 +9,7 @@ s,آکوا,kitaro_aqua,70,90,900,false
 s,امواج شفاف,Alpha_Lucid_Waves,35,100,1800,true
 s,داستان قطب شمال,story_north_pole,100,20,955,false
 #
-m,0,singleTreeMix,2,تک درخت,covers/single_tree_in_bliss.jpg,1800,دویدن در چمنزار
+m,1,singleTreeMix,2,تک درخت,covers/single_tree_in_bliss.jpg,1800,دویدن در چمنزار
 ~~
 s,داستان چمنزار,story_grassland,100,10,240,true
 s,پرندگان پاییزی,birds_autumn,15,0,50,true
