@@ -12,27 +12,27 @@
     
     <!-- لینک مستقیم به کافه بازار -->
     <p>
-        <a href="bazaar://details?id=ir.zemestoon.silentsound" class="bazaar-link">
+        <a href="bazaar://details?id=mortezamaghrebi.com.wordhero" class="bazaar-link">
             📲 باز کردن در کافه بازار
         </a>
     </p>
 	
 	<p>
-        <a href="myket://details?id=ir.zemestoon.wordhero" class="myket-link">
+        <a href="myket://details?id=mortezamaghrebi.com.wordhero" class="myket-link">
             📲 باز کردن در مایکت
         </a>
     </p>
     
     <!-- لینک جایگزین برای بازار -->
     <p>
-        <a href="market://details?id=ir.zemestoon.silentsound">
+        <a href="market://details?id=mortezamaghrebi.com.wordhero">
             🔗 لینک جایگزین بازار
         </a>
     </p>
     
     <!-- لینک وب سایت بازار -->
     <p>
-        <a href="https://cafebazaar.ir/app/ir.zemestoon.silentsound">
+        <a href="https://cafebazaar.ir/app/mortezamaghrebi.com.wordhero">
             🌐 لینک وب سایت بازار
         </a>
     </p>
