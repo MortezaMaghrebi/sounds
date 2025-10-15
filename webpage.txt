@@ -632,17 +632,10 @@
             
             <div class="store-buttons">
                 <a href="bazaar://details?id=com.sleepsounds.app" class="store-btn">
-                    <i class="fas fa-store store-icon"></i>
-                    <div>
-                        <div style="font-size: 0.8rem;">دانلود از</div>
-                        <div style="font-weight: 800;">کافه بازار</div>
-                    </div>
-                </a>
-                <a href="myket://details?id=com.sleepsounds.app" class="store-btn">
                     <i class="fas fa-shopping-bag store-icon"></i>
                     <div>
                         <div style="font-size: 0.8rem;">دانلود از</div>
-                        <div style="font-weight: 800;">مایکت</div>
+                        <div style="font-weight: 800;">کافه بازار</div>
                     </div>
                 </a>
             </div>
