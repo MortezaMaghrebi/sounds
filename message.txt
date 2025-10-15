@@ -1,45 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <style>
-        body {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: #e2e8f0;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            text-align: center;
-        }
-        .promo-title {
-            color: #fbbf24;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .promo-text {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .feature {
-            background: rgba(255,255,255,0.1);
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="promo-title">✨ نسخه جدید برنامه ✨</div>
-    <div class="promo-text">با ویژگی‌های فوق‌العاده جدید!</div>
+<div style="text-align: center;">
+    <h1>✨ تبلیغ ویژه ✨</h1>
+    <p>با جدیدترین ویژگی‌های برنامه آشنا شوید!</p>
     
-    <div class="feature">🎵  صدای با کیفیت بالا</div>
-    <div class="feature">📱 رابط کاربری بهبود یافته</div>
-    <div class="feature">⚡ عملکرد سریع‌تر</div>
-    
-    <div class="promo-text" style="margin-top: 20px;">
-        برای اطلاعات بیشتر از وبسایت ما دیدن کنید:
-        <br>
-        <a href="https://example.com" style="color: #60a5fa;">example.com</a>
+    <div style="margin: 20px 0;">
+        <p>🎵 صدای با کیفیت بالا</p>
+        <p>📱 رابط کاربری بهبود یافته</p>
+        <p>⚡ عملکرد سریع‌تر</p>
     </div>
-</body>
-</html>
+    
+    <p>برنامه‌های دیگر ما را در کافه بازار دانلود کنید:</p>
+    
+    <!-- لینک مستقیم به کافه بازار -->
+    <p>
+        <a href="bazaar://details?id=ir.zemestoon.silentsound" class="bazaar-link">
+            📲 باز کردن در کافه بازار
+        </a>
+    </p>
+    
+    <!-- لینک جایگزین برای بازار -->
+    <p>
+        <a href="market://details?id=ir.zemestoon.silentsound">
+            🔗 لینک جایگزین بازار
+        </a>
+    </p>
+    
+    <!-- لینک وب سایت بازار -->
+    <p>
+        <a href="https://cafebazaar.ir/app/ir.zemestoon.silentsound">
+            🌐 لینک وب سایت بازار
+        </a>
+    </p>
+    
+    <p>برای اطلاعات بیشتر از لینک‌های زیر دیدن کنید:</p>
+    
+    <p>
+        <a href="https://example.com/features">مشاهده ویژگی‌ها</a>
+    </p>
+    <p>
+        <a href="https://example.com/download">دانلود نسخه جدید</a>
+    </p>
+    
+    <p style="margin-top: 30px; font-size: 12px; color: #94a3b8;">
+        با کلیک روی لینک‌ها، برنامه مربوطه باز خواهد شد
+    </p>
+</div>
