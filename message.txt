@@ -16,6 +16,12 @@
             📲 باز کردن در کافه بازار
         </a>
     </p>
+	
+	<p>
+        <a href="myket://details?id=ir.zemestoon.wordhero" class="myket-link">
+            📲 باز کردن در مایکت
+        </a>
+    </p>
     
     <!-- لینک جایگزین برای بازار -->
     <p>
