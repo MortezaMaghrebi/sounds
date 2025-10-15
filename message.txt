@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordHero - بازی کلمه‌سازی جذاب</title>
+    <title>صداهای خواب - آرامش در خواب</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
         
         :root {
-            --primary: #4f46e5;
-            --primary-light: #6366f1;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
             --secondary: #10b981;
-            --accent: #f59e0b;
+            --accent: #8b5cf6;
             --dark: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
-            --gradient: linear-gradient(135deg, #4f46e5, #7c3aed);
+            --night: #0f172a;
+            --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
         }
         
         * {
@@ -27,48 +28,57 @@
         }
         
         body {
-            background-color: #f1f5f9;
-            color: var(--dark);
+            background: var(--night);
+            color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 100%;
             padding: 0 20px;
         }
         
         /* هدر */
         header {
             background: var(--gradient);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
         }
         
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 15px;
+            margin-bottom: 15px;
+            position: relative;
         }
         
         .logo-icon {
-            font-size: 2.5rem;
-            background: white;
-            color: var(--primary);
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 2.5rem;
+            backdrop-filter: blur(10px);
         }
         
         .logo-text h1 {
@@ -81,124 +91,53 @@
             opacity: 0.9;
         }
         
-        .download-btn {
-            background: white;
-            color: var(--primary);
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            opacity: 0.9;
         }
         
         /* بخش قهرمان */
         .hero {
-            padding: 80px 0;
-            background: var(--gradient);
-            color: white;
-            position: relative;
-            overflow: hidden;
+            padding: 40px 0;
+            text-align: center;
         }
         
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        
-        .hero-text {
-            flex: 1;
-            max-width: 600px;
-        }
-        
-        .hero-text h2 {
-            font-size: 2.5rem;
+        .hero h2 {
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            line-height: 1.3;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .hero-text p {
-            font-size: 1.2rem;
+        .hero p {
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: var(--gray);
+            max-width: 500px;
+            margin-right: auto;
+            margin-left: auto;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: #e58e0b;
-            transform: translateY(-3px);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-        
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+        .app-showcase {
+            position: relative;
+            margin: 30px auto;
+            max-width: 300px;
         }
         
         .phone-mockup {
-            width: 300px;
-            height: 550px;
-            background: white;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            height: 500px;
+            background: var(--dark);
+            border-radius: 30px;
+            margin: 0 auto;
             position: relative;
             overflow: hidden;
-            border: 10px solid #1e293b;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 8px solid #1e293b;
         }
         
         .phone-screen {
@@ -214,7 +153,7 @@
             text-align: center;
         }
         
-        .app-icon {
+        .app-icon-large {
             font-size: 4rem;
             margin-bottom: 20px;
             background: rgba(255, 255, 255, 0.2);
@@ -227,225 +166,213 @@
             backdrop-filter: blur(10px);
         }
         
-        .phone-screen h3 {
-            font-size: 1.5rem;
+        .playing-sound {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .sound-title {
+            font-size: 1.2rem;
             margin-bottom: 10px;
+        }
+        
+        .sound-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
         
         /* ویژگی‌ها */
         .features {
-            padding: 100px 0;
-            background: white;
+            padding: 50px 0;
+            background: rgba(30, 41, 59, 0.5);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--dark);
+            font-size: 1.8rem;
             margin-bottom: 15px;
         }
         
         .section-title p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--gray);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
         
         .feature-card {
-            background: var(--light);
-            border-radius: 20px;
-            padding: 30px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
         
         .feature-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
-            border-radius: 20px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
         }
         
         .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
         
         .feature-card p {
             color: var(--gray);
+            font-size: 0.9rem;
         }
         
-        /* نحوه کار */
-        .how-it-works {
-            padding: 100px 0;
-            background: #f8fafc;
+        /* صداها */
+        .sounds {
+            padding: 50px 0;
         }
         
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 50px;
+        .sounds-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
         
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
+        .sound-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
             padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
         
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        .sound-card:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: translateY(-3px);
         }
         
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--dark);
+        .sound-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent);
         }
         
-        .step p {
+        .sound-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .sound-card p {
+            font-size: 0.8rem;
             color: var(--gray);
         }
         
         /* دانلود */
         .download {
-            padding: 100px 0;
+            padding: 50px 0;
             background: var(--gradient);
-            color: white;
             text-align: center;
         }
         
         .download h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
         .download p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1rem;
+            margin-bottom: 30px;
             opacity: 0.9;
+            max-width: 500px;
+            margin-right: auto;
+            margin-left: auto;
         }
         
         .store-buttons {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
         }
         
         .store-btn {
             background: white;
             color: var(--dark);
-            padding: 15px 30px;
+            padding: 15px 20px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
         }
         
         .store-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .store-icon {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         
         /* فوتر */
         footer {
             background: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
+            padding: 40px 0 20px;
+            text-align: center;
         }
         
         .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
         .footer-links a {
-            color: #cbd5e1;
+            color: var(--gray);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -456,8 +383,9 @@
         
         .social-links {
             display: flex;
+            justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-bottom: 30px;
         }
         
         .social-link {
@@ -479,192 +407,219 @@
         }
         
         .copyright {
-            text-align: center;
+            color: var(--gray);
+            font-size: 0.8rem;
             padding-top: 20px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* دکمه‌ها */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        /* ستاره‌ها برای افکت شب */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
         
         /* رسپانسیو */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
+        @media (min-width: 480px) {
+            .sounds-grid {
+                grid-template-columns: 1fr 1fr 1fr;
             }
             
-            .hero-text {
-                margin-bottom: 50px;
-            }
-            
-            .hero-buttons {
+            .store-buttons {
+                flex-direction: row;
                 justify-content: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .logo {
-                justify-content: center;
-                text-align: center;
-            }
-            
-            .steps {
-                flex-direction: column;
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- افکت ستاره‌ها -->
+    <div class="stars" id="stars"></div>
+    
     <!-- هدر -->
     <header>
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-spell-check"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>WordHero</h1>
-                        <p>قهرمان کلمات شوید!</p>
-                    </div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-moon"></i>
                 </div>
-                <a href="#download" class="download-btn">
-                    <i class="fas fa-download"></i>
-                    دانلود رایگان
-                </a>
+                <div class="logo-text">
+                    <h1>صداهای خواب</h1>
+                    <p>آرامش در خواب</p>
+                </div>
             </div>
+            <p class="tagline">بهترین تجربه خواب با صداهای طبیعت و آرامش‌بخش</p>
         </div>
     </header>
 
     <!-- بخش قهرمان -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>قهرمان کلمات شوید و مهارت زبانی خود را تقویت کنید!</h2>
-                    <p>WordHero یک بازی کلمه‌سازی جذاب و آموزشی است که به شما کمک می‌کود دایره لغات خود را گسترش دهید و در عین حال سرگرم شوید.</p>
-                    <div class="hero-buttons">
-                        <a href="#download" class="btn btn-primary">
-                            <i class="fas fa-play"></i>
-                            شروع بازی
-                        </a>
-                        <a href="#features" class="btn btn-secondary">
-                            <i class="fas fa-info-circle"></i>
-                            اطلاعات بیشتر
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <div class="app-icon">
-                                <i class="fas fa-spell-check"></i>
-                            </div>
-                            <h3>WordHero</h3>
-                            <p>بازی کلمه‌سازی جذاب</p>
-                            <div style="margin-top: 20px;">
-                                <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 10px; margin: 10px 0;">
-                                    <p>کلمه بعدی: "هواپیما"</p>
+            <h2>خوابی آرام و راحت با صداهای طبیعت</h2>
+            <p>با مجموعه‌ای از صداهای آرامش‌بخش طبیعت، مدیتیشن و نویز سفید، خوابی عمیق و باکیفیت را تجربه کنید.</p>
+            
+            <div class="app-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-icon-large">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h3>صداهای خواب</h3>
+                        <p>در حال پخش: باران</p>
+                        
+                        <div class="playing-sound">
+                            <div class="sound-title">باران آرام</div>
+                            <div class="sound-controls">
+                                <div class="control-btn">
+                                    <i class="fas fa-backward"></i>
                                 </div>
-                                <div style="display: flex; gap: 5px; justify-content: center; margin-top: 15px;">
-                                    <span style="background: rgba(255,255,255,0.3); width: 30px; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">ه</span>
-                                    <span style="background: rgba(255,255,255,0.3); width: 30px; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">و</span>
-                                    <span style="background: rgba(255,255,255,0.3); width: 30px; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">ا</span>
+                                <div class="control-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="control-btn">
+                                    <i class="fas fa-forward"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <a href="#download" class="btn">
+                <i class="fas fa-download"></i>
+                دانلود رایگان
+            </a>
         </div>
     </section>
 
     <!-- ویژگی‌ها -->
-    <section class="features" id="features">
+    <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>ویژگی‌های منحصر به فرد WordHero</h2>
-                <p>با این ویژگی‌ها، بازی کلمه‌سازی را به سطح جدیدی ببرید</p>
+                <h2>ویژگی‌های منحصر به فرد</h2>
+                <p>با این ویژگی‌ها، خواب بهتری را تجربه کنید</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-cloud-rain"></i>
                     </div>
-                    <h3>تقویت حافظه و ذهن</h3>
-                    <p>با چالش‌های مختلف، حافظه و توانایی ذهنی خود را تقویت کنید و سرعت تفکر خود را افزایش دهید.</p>
+                    <h3>صداهای طبیعی</h3>
+                    <p>مجموعه‌ای از صداهای طبیعی آرامش‌بخش مانند باران، امواج دریا و جنگل</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-bed"></i>
                     </div>
-                    <h3>سیستم امتیاز و رتبه</h3>
-                    <p>با کسب امتیاز و رسیدن به رتبه‌های بالاتر، مهارت خود را به رخ دیگران بکشید.</p>
+                    <h3>تایمر خواب</h3>
+                    <p>قابلیت تنظیم تایمر برای خاموش شدن خودکار پس از به خواب رفتن</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-sliders-h"></i>
                     </div>
-                    <h3>حالت چندنفره</h3>
-                    <p>با دوستان خود رقابت کنید و در مسابقات کلمه‌سازی شرکت کنید.</p>
+                    <h3>تنظیم دقیق</h3>
+                    <p>امکان ترکیب صداها و تنظیم دقیق حجم هر کدام برای تجربه شخصی</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h3>پیگیری پیشرفت</h3>
-                    <p>پیشرفت روزانه خود را مشاهده کنید و با آمار دقیق، نقاط قوت و ضعف خود را شناسایی کنید.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>طراحی زیبا و کاربرپسند</h3>
-                    <p>از رابط کاربری زیبا و intuitive برنامه لذت ببرید که استفاده از آن را آسان می‌کند.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>جوایز و دستاوردها</h3>
-                    <p>با کامل کردن مراحل مختلف، دستاوردهای ویژه کسب کنید و از جوایز منحصر به فرد بهره‌مند شوید.</p>
+                    <h3>مدیتیشن</h3>
+                    <p>صداهای مدیتیشن و تمرینات آرامش‌بخش برای کاهش استرس</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- نحوه کار -->
-    <section class="how-it-works">
+    <!-- صداها -->
+    <section class="sounds">
         <div class="container">
             <div class="section-title">
-                <h2>چگونه بازی کنیم؟</h2>
-                <p>فقط در ۴ مرحله ساده، قهرمان کلمات شوید</p>
+                <h2>انواع صداهای آرامش‌بخش</h2>
+                <p>انتخاب از بین ده‌ها صدای مختلف</p>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">۱</div>
-                    <h3>دانلود و نصب</h3>
-                    <p>برنامه را به رایگان دانلود و نصب کنید</p>
+            <div class="sounds-grid">
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>باران</h3>
+                    <p>باران ملایم</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">۲</div>
-                    <h3>حساب کاربری ایجاد کنید</h3>
-                    <p>با ایجاد حساب کاربری، پیشرفت خود را ذخیره کنید</p>
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>دریا</h3>
+                    <p>امواج دریا</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">۳</div>
-                    <h3>شروع به بازی کنید</h3>
-                    <p>از مراحل آسان شروع کنید و به تدریج پیشرفت کنید</p>
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>باد</h3>
+                    <p>وزش باد ملایم</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">۴</div>
-                    <h3>قهرمان شوید</h3>
-                    <p>با تمرین مستمر، قهرمان کلمات شوید</p>
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>آتش</h3>
+                    <p>ترق تروق آتش</p>
+                </div>
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>جنگل</h3>
+                    <p>صدای جنگل شب</p>
+                </div>
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-feather"></i>
+                    </div>
+                    <h3>سکوت</h3>
+                    <p>نویز سفید</p>
                 </div>
             </div>
         </div>
@@ -673,29 +628,21 @@
     <!-- دانلود -->
     <section class="download" id="download">
         <div class="container">
-            <h2>همین حالا WordHero را دانلود کنید</h2>
-            <p>به جامعه میلیونی بازیکنان WordHero بپیوندید و مهارت زبانی خود را تقویت کنید. رایگان و بدون هیچ هزینه پنهانی!</p>
+            <h2>همین حالا دانلود کنید</h2>
             
             <div class="store-buttons">
-                <a href="bazaar://details?id=mortezamaghrebi.com.wordhero" class="store-btn">
+                <a href="bazaar://details?id=com.sleepsounds.app" class="store-btn">
                     <i class="fas fa-store store-icon"></i>
                     <div>
                         <div style="font-size: 0.8rem;">دانلود از</div>
                         <div style="font-weight: 800;">کافه بازار</div>
                     </div>
                 </a>
-                <a href="myket://details?id=mortezamaghrebi.com.wordhero" class="store-btn">
+                <a href="myket://details?id=com.sleepsounds.app" class="store-btn">
                     <i class="fas fa-shopping-bag store-icon"></i>
                     <div>
                         <div style="font-size: 0.8rem;">دانلود از</div>
                         <div style="font-weight: 800;">مایکت</div>
-                    </div>
-                </a>
-                <a href="https://cafebazaar.ir/app/mortezamaghrebi.com.wordhero" class="store-btn">
-                    <i class="fas fa-globe store-icon"></i>
-                    <div>
-                        <div style="font-size: 0.8rem;">لینک وب</div>
-                        <div style="font-weight: 800;">سایت بازار</div>
                     </div>
                 </a>
             </div>
@@ -705,42 +652,57 @@
     <!-- فوتر -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>درباره WordHero</h3>
-                    <p>WordHero یک بازی آموزشی و سرگرم‌کننده کلمه‌سازی است که به کاربران کمک می‌کند دایره لغات خود را گسترش دهند و در عین حال سرگرم شوند.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>لینک‌های مفید</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">صفحه اصلی</a></li>
-                        <li><a href="#">ویژگی‌ها</a></li>
-                        <li><a href="#">دانلود</a></li>
-                        <li><a href="#">راهنما</a></li>
-                        <li><a href="#">سوالات متداول</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>پشتیبانی</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">تماس با ما</a></li>
-                        <li><a href="#">پیشنهادات</a></li>
-                        <li><a href="#">گزارش مشکل</a></li>
-                        <li><a href="#">سیاست حفظ حریم خصوصی</a></li>
-                        <li><a href="#">شرایط استفاده</a></li>
-                    </ul>
-                </div>
+            <div class="footer-links">
+                <a href="#">صفحه اصلی</a>
+                <a href="#">درباره ما</a>
+                <a href="#">تماس با ما</a>
+                <a href="#">حریم خصوصی</a>
             </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            
             <div class="copyright">
-                <p>© ۲۰۲۳ WordHero. تمامی حقوق محفوظ است.</p>
+                <p>© ۲۰۲۳ صداهای خواب. تمامی حقوق محفوظ است.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // ایجاد ستاره‌ها
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // موقعیت تصادفی
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // اندازه تصادفی
+                const size = Math.random() * 3;
+                
+                // تاخیر انیمیشن تصادفی
+                const delay = Math.random() * 5;
+                
+                star.style.left = `${left}%`;
+                star.style.top = `${top}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // ایجاد ستاره‌ها پس از لود صفحه
+        document.addEventListener('DOMContentLoaded', createStars);
+    </script>
 </body>
 </html>
