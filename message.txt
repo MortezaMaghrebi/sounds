@@ -32,7 +32,7 @@
     <div class="promo-title">✨ نسخه جدید برنامه ✨</div>
     <div class="promo-text">با ویژگی‌های فوق‌العاده جدید!</div>
     
-    <div class="feature">🎵 صدای با کیفیت بالا</div>
+    <div class="feature">🎵  صدای با کیفیت بالا</div>
     <div class="feature">📱 رابط کاربری بهبود یافته</div>
     <div class="feature">⚡ عملکرد سریع‌تر</div>
     
