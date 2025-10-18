@@ -1,4 +1,4 @@
-nature,پرنده,bird.png,nature/bird.mp3,10,0,0
+﻿nature,پرنده,bird_enc.png,nature/bird.mp3,10,0,0
 nature,پرندگان,hummingbird.png,nature/birds.mp3,10,0,0
 nature,گربه خرخر,cat.png,nature/cat_purring.mp3,10,0,0
 nature,جیرجیرک,cricket.png,nature/cricket.mp3,10,0,0
