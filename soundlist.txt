@@ -45,6 +45,10 @@ nature,رعد و برق ۲,storm.png,nature/thunder2.mp3,10,0,0
 nature,باد ۲,wind.png,nature/wind2.mp3,10,0,0
 nature,پارو زدن,dinghy.png,nature/oar.mp3,10,0,0
 nature,باد ملایم,wind.png,nature/gentle_wind.mp3,10,0,0
+nature,جنگل موسمی,rainforest.png,nature/rainforest.mp3,10,0,0
+nature,جریان رودخانه,creek.png,nature/river_natural_water.mp3,10,0,0
+nature,آب کوهستان,water.png,nature/water_cascade_down_rock.mp3,10,0,0
+nature,غروب دریاچه,lake.png,nature/lake_sunset.mp3,10,0,0
 music,نوازش فرشته ای,sleep.png,music/dan_gibson/dg_an_angles_caress.mp3,70,0,0
 music,رهروی در سرزمین خواب,sleep.png,music/dan_gibson/dg_drifting_in_dreamland.mp3,70,0,0
 music,نخستین ستاره افق,sleep.png,music/dan_gibson/dg_first_star_in_sky.mp3,70,0,0
